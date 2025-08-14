@@ -1,0 +1,61 @@
+{
+  "contact": {
+    "email": "info@safarimatch.com",
+    "phone": "+27 21 123 4567",
+    "address": "Safari Street 123, Cape Town, South Africa",
+    "businessHours": "Monday - Friday: 9:00 AM - 6:00 PM (SAST)",
+    "timezone": "South Africa Standard Time (SAST)",
+    "socialMedia": {
+      "facebook": "https://facebook.com/safarimatch",
+      "twitter": "https://twitter.com/safarimatch",
+      "instagram": "https://instagram.com/safarimatch"
+    }
+  },
+  "departments": [
+    {
+      "name": "Customer Support",
+      "email": "support@safarimatch.com",
+      "phone": "+27 21 123 4568",
+      "description": "Get help with game issues, account problems, or general questions about Safari Match."
+    },
+    {
+      "name": "Technical Support",
+      "email": "tech@safarimatch.com",
+      "phone": "+27 21 123 4569",
+      "description": "Report bugs, technical issues, or compatibility problems with Safari Match."
+    },
+    {
+      "name": "Business Inquiries",
+      "email": "business@safarimatch.com",
+      "phone": "+27 21 123 4570",
+      "description": "Partnership opportunities, licensing, or business development inquiries."
+    },
+    {
+      "name": "Press & Media",
+      "email": "press@safarimatch.com",
+      "phone": "+27 21 123 4571",
+      "description": "Media inquiries, press releases, or interview requests about Safari Match."
+    }
+  ],
+  "officeLocation": {
+    "city": "Cape Town",
+    "country": "South Africa",
+    "continent": "Africa",
+    "coordinates": {
+      "latitude": -33.9249,
+      "longitude": 18.4241
+    },
+    "description": "Our headquarters are located in the beautiful city of Cape Town, surrounded by stunning landscapes that inspire our safari-themed game design. The office is easily accessible by public transport and offers a creative environment for our development team."
+  },
+  "responseTime": {
+    "email": "Within 24 hours",
+    "phone": "Immediate during business hours",
+    "support": "Within 48 hours for non-urgent issues"
+  },
+  "languages": [
+    "English (Primary)",
+    "Afrikaans",
+    "Zulu",
+    "Xhosa"
+  ]
+}

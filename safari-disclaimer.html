@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Disclaimer - Safari Match</title>
+    <meta
+      name="description"
+      content="Legal disclaimer and terms for Safari Match game. Important information about game usage and liability."
+    />
+    <link rel="stylesheet" href="css/safari-styles.css" />
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Header will be dynamically loaded -->
+    <div id="safari-header-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="page-header-savanna">
+      <div class="savanna-container">
+        <h1 class="page-title">Disclaimer</h1>
+        <p class="page-subtitle">Important legal information</p>
+      </div>
+    </section>
+
+    <!-- Disclaimer Content -->
+    <section class="disclaimer-content">
+      <div class="savanna-container">
+        <div class="legal-text-container">
+          <h2 class="section-title">Legal Disclaimer</h2>
+
+          <div class="disclaimer-section">
+            <h3>Game Information</h3>
+            <p>
+              Safari Match is a puzzle game designed for entertainment purposes.
+              The game involves matching colorful animal blocks in a
+              safari-themed environment. While we strive to provide an engaging
+              and enjoyable gaming experience, individual results may vary.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Age Restrictions</h3>
+            <p>
+              This game is suitable for players of all ages. However, parental
+              guidance is recommended for younger players. The game does not
+              contain explicit content but may include mild puzzle-solving
+              challenges.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Game Mechanics</h3>
+            <p>
+              The match-3 puzzle mechanics are designed to be accessible yet
+              challenging. Game difficulty increases progressively through
+              levels. Boosters and special combinations are provided to enhance
+              gameplay experience.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Technical Requirements</h3>
+            <p>
+              Safari Match requires a modern web browser with JavaScript
+              enabled. Performance may vary depending on device specifications
+              and internet connection quality. We recommend using the latest
+              browser versions for optimal experience.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Limitation of Liability</h3>
+            <p>
+              By using Safari Match, you acknowledge that the game is provided
+              "as is" without warranties of any kind. We are not liable for any
+              damages or losses resulting from game usage, including but not
+              limited to data loss, device malfunction, or personal injury.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Updates and Changes</h3>
+            <p>
+              We reserve the right to modify, update, or discontinue Safari
+              Match at any time without prior notice. Game features, mechanics,
+              and content may change as part of ongoing development and
+              improvement efforts.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Third-Party Content</h3>
+            <p>
+              Safari Match may contain references to third-party services,
+              including but not limited to analytics, advertising, and social
+              media platforms. We are not responsible for the content or privacy
+              practices of these third-party services.
+            </p>
+          </div>
+
+          <div class="disclaimer-section">
+            <h3>Contact Information</h3>
+            <p>
+              If you have questions about this disclaimer or need clarification
+              on any terms, please contact us through our
+              <a href="contact-safari.html" class="safari-link">contact page</a
+              >.
+            </p>
+          </div>
+
+          <div class="disclaimer-footer">
+            <p>
+              <strong>Last updated:</strong> <span id="disclaimer-date"></span>
+            </p>
+            <p>
+              By continuing to use Safari Match, you acknowledge that you have
+              read, understood, and agree to this disclaimer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer will be dynamically loaded -->
+    <div id="savanna-footer-placeholder"></div>
+
+    <script src="js/safari-main.js"></script>
+    <script src="js/safari-loader.js"></script>
+    <script>
+      // Set current date for disclaimer
+      document.getElementById("disclaimer-date").textContent =
+        new Date().toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        });
+    </script>
+  </body>
+</html>

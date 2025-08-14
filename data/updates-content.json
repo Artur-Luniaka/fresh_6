@@ -1,0 +1,96 @@
+{
+  "enhancements": [
+    {
+      "icon": "🆕",
+      "title": "New Animal Types",
+      "description": "We've added exciting new safari animals to the game! Meet the majestic rhinoceros, the swift cheetah, and the playful meerkat. Each new animal brings unique abilities and special powers that will change how you approach puzzles.",
+      "version": "2.1.0",
+      "releaseDate": "2024-01-15"
+    },
+    {
+      "icon": "⚡",
+      "title": "Enhanced Booster System",
+      "description": "The booster system has been completely revamped! New booster types include the 'Savanna Storm' that clears multiple rows and the 'Jungle Pulse' that creates chain reactions. Boosters now have cooldown timers for more strategic gameplay.",
+      "version": "2.1.0",
+      "releaseDate": "2024-01-15"
+    },
+    {
+      "icon": "🎨",
+      "title": "Visual Improvements",
+      "description": "Enhanced graphics and animations throughout the game! Improved particle effects, smoother transitions, and new visual feedback for special combinations. The safari world has never looked more beautiful.",
+      "version": "2.0.5",
+      "releaseDate": "2024-01-10"
+    },
+    {
+      "icon": "🎵",
+      "title": "New Soundtrack",
+      "description": "Immerse yourself in the safari atmosphere with our new ambient soundtrack! Featuring authentic African instruments and nature sounds that change based on your progress and achievements.",
+      "version": "2.0.5",
+      "releaseDate": "2024-01-10"
+    },
+    {
+      "icon": "🏆",
+      "title": "Achievement Overhaul",
+      "description": "The achievement system has been completely redesigned! New categories include 'Safari Explorer', 'Puzzle Master', and 'Booster Expert'. Unlock special rewards and showcase your skills with detailed statistics.",
+      "version": "2.0.3",
+      "releaseDate": "2024-01-05"
+    },
+    {
+      "icon": "🔧",
+      "title": "Performance Optimizations",
+      "description": "Major performance improvements across all devices! Reduced loading times, smoother animations, and better memory management. The game now runs flawlessly on both high-end and older devices.",
+      "version": "2.0.3",
+      "releaseDate": "2024-01-05"
+    }
+  ],
+  "diaries": [
+    {
+      "icon": "🏆",
+      "title": "New World Record!",
+      "story": "Incredible news from the safari! Player 'WildPuzzleMaster' achieved an unbelievable score of 15,420 points on Level 47, breaking the previous record by over 2,000 points! Using a combination of the new rhino boosters and perfect timing, they created a chain reaction that lasted for over 30 seconds. This achievement unlocks the exclusive 'Safari Legend' title and special golden animal blocks.",
+      "player": "WildPuzzleMaster",
+      "date": "2024-01-14",
+      "score": 15420
+    },
+    {
+      "icon": "🎯",
+      "title": "Perfect Combo Mastery",
+      "story": "SafariQueen has done it again! This amazing player created a perfect 8-block combination using the new cheetah boosters, resulting in a massive score boost and clearing the entire grid in one move. The combination was so impressive that it triggered a special 'Savanna Celebration' animation that lasted for 10 seconds. This is the first time anyone has achieved this level of perfection!",
+      "player": "SafariQueen",
+      "date": "2024-01-13",
+      "score": 12850
+    },
+    {
+      "icon": "🌿",
+      "title": "Jungle Explorer Achievement",
+      "story": "Congratulations to 'SafariAdventurer' for completing all 50 levels in the new Jungle Challenge mode! This player spent weeks perfecting their strategy and using every booster type effectively. Their dedication earned them the rare 'Jungle Explorer' badge and unlocked exclusive content including special animal skins and bonus levels.",
+      "player": "SafariAdventurer",
+      "date": "2024-01-12",
+      "achievement": "Jungle Explorer"
+    },
+    {
+      "icon": "⚡",
+      "title": "Booster Innovation",
+      "story": "Player 'LightningStrike' discovered an amazing new strategy using the enhanced booster system! By combining the Savanna Storm with the Jungle Pulse in the correct sequence, they were able to clear three levels in a single session without using any additional boosters. This innovative approach has inspired the development team to create even more exciting booster combinations for future updates.",
+      "player": "LightningStrike",
+      "date": "2024-01-11",
+      "strategy": "Booster Combination"
+    },
+    {
+      "icon": "🦁",
+      "title": "Community Challenge Success",
+      "story": "The Safari Match community came together for our first-ever global challenge! Over 10,000 players participated in the 'Lion's Pride' event, collectively solving 500,000 puzzles in just 48 hours. The community unlocked special rewards including the exclusive 'Pride of the Savanna' animal collection and bonus boosters for everyone.",
+      "player": "Safari Community",
+      "date": "2024-01-10",
+      "participants": 10000
+    },
+    {
+      "icon": "🎨",
+      "title": "Creative Level Design",
+      "story": "We received an amazing submission from 'PuzzleArtist' who designed a custom level layout that our development team loved so much, we've decided to include it in the next update! Their creative approach to obstacle placement and animal distribution has inspired new level design principles that will make future puzzles even more engaging.",
+      "player": "PuzzleArtist",
+      "date": "2024-01-09",
+      "contribution": "Level Design"
+    }
+  ]
+}
