@@ -51,6 +51,10 @@
     {
       "title": "Master the Grid",
       "description": "Learn how blocks fall and plan your strategy accordingly. Understanding the grid mechanics will help you create amazing combinations and achieve higher scores."
+    },
+    {
+      "title": "Chain Reactions",
+      "description": "Create chain reactions by making multiple matches in sequence. Each subsequent match in a chain gives you bonus points and special effects!"
     }
   ],
   "testimonials": [
@@ -69,100 +73,142 @@
     {
       "name": "David K.",
       "comment": "The safari theme is brilliant! I love matching the different animals and the boosters add a great strategic element. Highly recommend for anyone who loves puzzle games."
-    },
-    {
-      "name": "Lisa P.",
-      "comment": "Perfect game to relax with after a long day. The beautiful graphics and satisfying match sounds make it very therapeutic. Can't stop playing!"
     }
+  ],
+  "adventurer-text": [
+    "Join thousands of puzzle enthusiasts who have discovered the magic of Safari Match! Our community of players spans across the globe, united by their love for challenging puzzles and beautiful safari adventures.",
+    "From casual gamers to puzzle masters, everyone finds something to love in Safari Match. The game's progressive difficulty system ensures that beginners can learn at their own pace while experienced players face exciting challenges.",
+    "Our players love sharing their achievements, strategies, and memorable moments. Whether you're solving your first puzzle or conquering the most difficult levels, you're part of an amazing community of safari adventurers!"
   ],
   "animals": [
     {
       "name": "Lion",
-      "emoji": "🦁",
-      "description": "The king of the jungle with powerful matching abilities. Lion blocks are strong and can create powerful combinations when matched in groups.",
-      "power": 3
+      "description": "The majestic king of the jungle with powerful matching abilities. Lion blocks are strong and can create powerful combinations when matched in groups. Their golden mane represents the highest tier of animal power, making them essential for clearing difficult obstacles and achieving high scores.",
+      "power": 3,
+      "special_ability": "Royal Roar - Creates shockwaves that clear adjacent blocks",
+      "habitat": "Savanna grasslands and open plains",
+      "strategy": "Use lion blocks strategically to create cascading effects and clear multiple rows simultaneously"
     },
     {
       "name": "Elephant",
-      "emoji": "🐘",
-      "description": "Mighty and wise, elephant blocks have the highest power level. They're rare but incredibly valuable for clearing difficult obstacles.",
-      "power": 5
+      "description": "Mighty and wise, elephant blocks have the highest power level in the safari. They're rare but incredibly valuable for clearing difficult obstacles and creating massive chain reactions. Their massive size allows them to affect multiple grid positions at once.",
+      "power": 5,
+      "special_ability": "Stampede - Destroys all blocks in a cross pattern",
+      "habitat": "Dense forests and riverbanks",
+      "strategy": "Save elephant blocks for the most challenging situations and obstacles"
     },
     {
       "name": "Giraffe",
-      "emoji": "🦒",
-      "description": "Tall and graceful, giraffe blocks can reach across the grid to create unique matching opportunities and special combinations.",
-      "power": 2
+      "description": "Tall and graceful, giraffe blocks can reach across the grid to create unique matching opportunities and special combinations. Their long necks allow them to connect blocks that would otherwise be impossible to match, making them perfect for strategic gameplay.",
+      "power": 2,
+      "special_ability": "Long Reach - Can match blocks across gaps and obstacles",
+      "habitat": "Acacia woodlands and open savanna",
+      "strategy": "Use giraffe blocks to bridge difficult gaps and create unexpected combinations"
     },
     {
       "name": "Zebra",
-      "emoji": "🦓",
-      "description": "Fast and agile, zebra blocks are common but essential. They're perfect for creating quick matches and building up your score.",
-      "power": 1
-    },
-    {
-      "name": "Hippo",
-      "emoji": "🦛",
-      "description": "Strong and steady, hippo blocks are excellent for clearing obstacles and creating powerful chain reactions across the grid.",
-      "power": 4
+      "description": "Fast and agile, zebra blocks are common but essential for building momentum. They're perfect for creating quick matches and building up your score. Their striped pattern makes them easy to spot and their speed allows for rapid chain reactions.",
+      "power": 1,
+      "special_ability": "Swift Movement - Faster matching and bonus points for speed",
+      "habitat": "Open grasslands and savanna plains",
+      "strategy": "Combine multiple zebra blocks for bonus points and rapid score building"
     }
   ],
   "boosters": [
     {
       "name": "Lightning Strike",
-      "icon": "⚡",
-      "description": "A powerful booster that clears an entire row or column instantly. Perfect for removing stubborn obstacles and creating space for new combinations.",
-      "effect": "Row/Column Clear"
+      "description": "A powerful booster that clears an entire row or column instantly. Perfect for removing stubborn obstacles and creating space for new combinations. The lightning energy can jump across gaps and affect multiple areas simultaneously, making it ideal for clearing complex board layouts.",
+      "effect": "Row/Column Clear",
+      "power_level": "High",
+      "best_use": "Clearing stubborn obstacles and creating space for new combinations",
+      "strategy": "Use when you need to clear a specific row or column to access blocked areas or create new matching opportunities"
     },
     {
       "name": "Jungle Blast",
-      "icon": "💥",
-      "description": "Creates a massive explosion that clears all blocks within a 3x3 area. Great for clearing clustered obstacles and creating opportunities.",
-      "effect": "Area Clear"
+      "description": "Creates a massive explosion that clears all blocks within a 3x3 area. Great for clearing clustered obstacles and creating opportunities for new combinations. The blast radius can be strategically positioned to maximize its effectiveness and create chain reactions.",
+      "effect": "Area Clear",
+      "power_level": "Medium",
+      "best_use": "Clearing clustered obstacles and creating space for new matches",
+      "strategy": "Position the blast center on areas with the most obstacles or where it can create the best chain reactions"
     },
     {
       "name": "Safari Swap",
-      "icon": "🔄",
-      "description": "Allows you to swap any two blocks on the grid, regardless of their position. Use strategically to create perfect combinations.",
-      "effect": "Block Swap"
+      "description": "Allows you to swap any two blocks on the grid, regardless of their position. Use strategically to create perfect combinations and unlock special blocks. This booster is perfect for situations where you're just one move away from a winning combination.",
+      "effect": "Block Swap",
+      "power_level": "Low",
+      "best_use": "Creating perfect combinations and unlocking special blocks",
+      "strategy": "Analyze the board carefully to find the most beneficial swap that will create multiple matches or special combinations"
     },
     {
       "name": "Wild Combo",
-      "icon": "🎯",
-      "description": "Automatically finds and matches the best possible combination on the grid. Perfect for when you're stuck or need a quick boost.",
-      "effect": "Auto Match"
+      "description": "Automatically finds and matches the best possible combination on the grid. Perfect for when you're stuck or need a quick boost. This intelligent booster analyzes the entire board to find the most rewarding combination, ensuring maximum points and strategic advantage.",
+      "effect": "Auto Match",
+      "power_level": "Variable",
+      "best_use": "Getting unstuck and finding optimal moves",
+      "strategy": "Use when you're unsure of the best move or when you need to maximize your score in a limited number of moves"
     }
   ],
-  "levels": [
-    {
-      "number": 1,
-      "name": "Welcome to Safari",
-      "completed": true,
-      "description": "Your first adventure begins! Learn the basics of matching animal blocks in this gentle introduction to the safari world."
-    },
-    {
-      "number": 2,
-      "name": "First Steps",
-      "completed": true,
-      "description": "Practice your matching skills with slightly more challenging puzzles. Discover the joy of creating special combinations."
-    },
-    {
-      "number": 3,
-      "name": "Animal Friends",
-      "completed": false,
-      "description": "Meet more safari animals and learn about their unique abilities. This level introduces new mechanics and challenges."
-    },
-    {
-      "number": 4,
-      "name": "Jungle Challenge",
-      "completed": false,
-      "description": "The jungle gets tougher! Face new obstacles and learn to use boosters effectively to overcome challenges."
-    },
-    {
-      "number": 5,
-      "name": "Savanna Master",
-      "completed": false,
-      "description": "Prove your skills in this challenging level that combines all the mechanics you've learned so far."
+  "safari-journey": {
+    "title": "Your Safari Adventure Progress",
+    "subtitle": "Track your journey through the wild puzzle world",
+    "background_image": "assets/safari-hero.jpg",
+    "stats": [
+      {
+        "label": "Levels Completed",
+        "value": "47",
+        "icon": "🎯",
+        "description": "You've conquered nearly half of the safari challenges!"
+      },
+      {
+        "label": "Total Score",
+        "value": "2,847,390",
+        "icon": "🏆",
+        "description": "Your puzzle-solving skills are truly impressive"
+      },
+      {
+        "label": "Animals Discovered",
+        "value": "12",
+        "icon": "🦁",
+        "description": "You've met most of the safari inhabitants"
+      },
+      {
+        "label": "Boosters Used",
+        "value": "156",
+        "icon": "⚡",
+        "description": "Strategic booster usage is your strength"
+      }
+    ],
+    "achievements": [
+      {
+        "name": "Safari Pioneer",
+        "description": "Completed your first 10 levels",
+        "unlocked": true,
+        "progress": "100%"
+      },
+      {
+        "name": "Animal Whisperer",
+        "description": "Discovered 10 different animal types",
+        "unlocked": true,
+        "progress": "100%"
+      },
+      {
+        "name": "Booster Master",
+        "description": "Used 100 boosters effectively",
+        "unlocked": true,
+        "progress": "100%"
+      },
+      {
+        "name": "Savanna Legend",
+        "description": "Complete 100 levels with perfect scores",
+        "unlocked": false,
+        "progress": "47%"
+      }
+    ],
+    "next_milestone": {
+      "title": "Next Milestone: Jungle Explorer",
+      "description": "Complete 50 levels to unlock the exclusive Jungle Explorer badge and special animal companion",
+      "progress": "94%",
+      "levels_remaining": 3
     }
-  ]
+  }
 }

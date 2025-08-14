@@ -16,6 +16,9 @@
   --shadow-light: rgba(0, 0, 0, 0.1);
   --shadow-medium: rgba(0, 0, 0, 0.2);
   --shadow-dark: rgba(0, 0, 0, 0.3);
+  --safari-accent: #ffd700;
+  --safari-highlight: #ffa500;
+  --safari-glow: rgba(255, 215, 0, 0.3);
 }
 
 /* Reset and Base Styles */
@@ -451,7 +454,7 @@ body {
 /* Section Styles */
 .puzzle-features,
 .how-to-play,
-.player-voices,
+.safari-adventurers,
 .animal-boosters,
 .level-progression,
 .game-enhancements,
@@ -488,169 +491,448 @@ body {
 }
 
 .feature-card {
-  background: var(--white);
+  background: linear-gradient(
+    135deg,
+    var(--wild-brown) 0%,
+    var(--jungle-dark) 100%
+  );
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 4px 15px var(--shadow-light);
+  box-shadow: 0 8px 25px var(--shadow-medium);
   flex: 1;
   min-width: 300px;
   max-width: 400px;
   text-align: center;
-  transition: transform 0.3s ease;
-  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  border: 2px solid var(--savanna-gold);
+  position: relative;
+  overflow: hidden;
 }
 
 .feature-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--savanna-gold);
+  transform: translateY(-8px);
+  border-color: var(--sunset-orange);
+  box-shadow: 0 12px 35px var(--shadow-dark);
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 4px var(--shadow-medium));
+  position: relative;
+  z-index: 2;
 }
 
-/* Instructions */
-.instructions-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.instruction-step {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 20px;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 15px var(--shadow-light);
-  border-left: 5px solid var(--leaf-green);
-}
-
-.step-number {
-  background: var(--leaf-green);
+.feature-title {
   color: var(--white);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  position: relative;
+  z-index: 2;
 }
 
-/* Testimonials */
-.testimonials-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
+.feature-description {
+  color: var(--savanna-light);
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
 }
 
-.testimonial-card {
-  background: var(--white);
+/* Safari-themed feature card variations */
+.feature-card.safari-levels {
+  border-color: var(--leaf-green);
+}
+
+.feature-card.safari-levels:hover {
+  border-color: var(--sky-blue);
+}
+
+.feature-card.safari-animals {
+  border-color: var(--match-vibe);
+}
+
+.feature-card.safari-animals:hover {
+  border-color: var(--earth-red);
+}
+
+.feature-card.safari-boosters {
+  border-color: var(--sunset-orange);
+}
+
+.feature-card.safari-boosters:hover {
+  border-color: var(--savanna-gold);
+}
+
+.feature-card.safari-graphics {
+  border-color: var(--jungle-dark);
+}
+
+.feature-card.safari-graphics:hover {
+  border-color: var(--leaf-green);
+}
+
+.feature-card.safari-achievements {
+  border-color: var(--safari-accent);
+}
+
+.feature-card.safari-achievements:hover {
+  border-color: var(--safari-highlight);
+}
+
+.feature-card.safari-modes {
+  border-color: var(--sky-blue);
+}
+
+.feature-card.safari-modes:hover {
+  border-color: var(--match-vibe);
+}
+
+.feature-card.safari-enhancements {
+  border-color: var(--safari-accent);
+}
+
+.feature-card.safari-enhancements:hover {
+  border-color: var(--safari-highlight);
+}
+
+.feature-card.safari-diaries {
+  border-color: var(--match-vibe);
+}
+
+.feature-card.safari-diaries:hover {
+  border-color: var(--safari-accent);
+}
+
+/* Enhancement Cards - Unique styling for game updates */
+.enhancement-card {
+  background: linear-gradient(
+    135deg,
+    var(--leaf-green) 0%,
+    var(--jungle-dark) 100%
+  );
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 4px 15px var(--shadow-light);
+  box-shadow: 0 8px 25px var(--shadow-medium);
   flex: 1;
   min-width: 300px;
   max-width: 400px;
   text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--safari-accent);
   position: relative;
+  overflow: hidden;
 }
 
-.testimonial-card::before {
-  content: '"';
-  font-size: 4rem;
-  color: var(--savanna-gold);
-  position: absolute;
-  top: -10px;
-  left: 20px;
+.enhancement-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--safari-highlight);
+  box-shadow: 0 12px 35px var(--shadow-dark);
 }
 
-.player-name {
-  color: var(--wild-brown);
+.enhancement-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 4px var(--shadow-medium));
+  position: relative;
+  z-index: 2;
+}
+
+.enhancement-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  position: relative;
+  z-index: 2;
+}
+
+.enhancement-description {
+  color: var(--savanna-light);
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.enhancement-version {
+  color: var(--safari-accent);
+  font-size: 0.9rem;
   font-weight: 600;
-  margin-top: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Diary Cards - Unique styling for player stories */
+.diary-card {
+  background: linear-gradient(
+    135deg,
+    var(--match-vibe) 0%,
+    var(--earth-red) 100%
+  );
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid var(--safari-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.diary-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--safari-highlight);
+  box-shadow: 0 12px 35px var(--shadow-dark);
+}
+
+.diary-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 2px 4px var(--shadow-medium));
+  position: relative;
+  z-index: 2;
+}
+
+.diary-title {
+  color: var(--white);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  position: relative;
+  z-index: 2;
+}
+
+.diary-story {
+  color: var(--savanna-light);
+  font-size: 1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+}
+
+.diary-player {
+  color: var(--safari-accent);
+  font-size: 0.9rem;
+  font-weight: 600;
+  position: relative;
+  z-index: 2;
+}
+
+/* Instructions Container - Legacy support */
+.instructions-container {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 /* Animals & Boosters */
 .animals-boosters-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
 }
 
-.animal-type,
-.booster-type {
-  background: var(--white);
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px var(--shadow-light);
+/* Animal Cards - Unique styling for safari animals */
+.animal-card {
+  background: linear-gradient(
+    135deg,
+    var(--wild-brown) 0%,
+    var(--jungle-dark) 100%
+  );
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-medium);
   flex: 1;
-  min-width: 300px;
-  max-width: 400px;
-  text-align: center;
-}
-
-.animal-emoji,
-.booster-emoji {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-/* Progress Container */
-.progress-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.level-table {
-  background: var(--white);
-  border-radius: 20px;
+  min-width: 250px;
+  max-width: 320px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 2px solid var(--safari-accent);
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 15px var(--shadow-light);
 }
 
-.level-row {
-  display: flex;
-  padding: 1rem;
-  border-bottom: 1px solid var(--shadow-light);
-  transition: background-color 0.3s ease;
+.animal-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--safari-highlight);
+  box-shadow: 0 8px 25px var(--shadow-dark);
 }
 
-.level-row:hover {
-  background: var(--savanna-light);
-}
-
-.level-row:last-child {
-  border-bottom: none;
-}
-
-.level-number {
+.animal-name {
+  color: var(--white);
+  font-size: 1.4rem;
   font-weight: 700;
-  color: var(--wild-brown);
-  min-width: 80px;
-}
-
-.level-name {
-  flex: 1;
-  margin-left: 1rem;
-}
-
-.level-status {
-  min-width: 100px;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  position: relative;
+  z-index: 2;
   text-align: center;
 }
 
-.status-completed {
-  color: var(--leaf-green);
+.animal-description {
+  color: var(--savanna-light);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.animal-details {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.875rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.animal-power,
+.animal-ability,
+.animal-habitat,
+.animal-strategy {
+  color: var(--white);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.animal-power {
+  color: var(--safari-accent);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.animal-ability {
+  color: var(--sky-blue);
   font-weight: 600;
 }
 
-.status-locked {
-  color: var(--earth-red);
+.animal-habitat {
+  color: var(--leaf-green);
+  font-weight: 500;
 }
+
+.animal-strategy {
+  color: var(--savanna-light);
+  font-style: italic;
+}
+
+.animal-power:last-child,
+.animal-ability:last-child,
+.animal-habitat:last-child,
+.animal-strategy:last-child {
+  margin-bottom: 0;
+}
+
+/* Booster Cards - Unique styling for power boosters */
+.booster-card {
+  background: linear-gradient(
+    135deg,
+    var(--wild-brown) 0%,
+    var(--jungle-dark) 100%
+  );
+  padding: 1.25rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px var(--shadow-medium);
+  flex: 1;
+  min-width: 250px;
+  max-width: 320px;
+  text-align: left;
+  transition: all 0.3s ease;
+  border: 2px solid var(--safari-accent);
+  position: relative;
+  overflow: hidden;
+}
+
+.booster-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--safari-highlight);
+  box-shadow: 0 8px 25px var(--shadow-dark);
+}
+
+.booster-name {
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.booster-description {
+  color: var(--savanna-light);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.booster-details {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 0.875rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.booster-effect,
+.booster-power,
+.booster-best-use,
+.booster-strategy {
+  color: var(--white);
+  font-size: 0.75rem;
+  line-height: 1.3;
+  margin-bottom: 0.4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.booster-effect {
+  color: var(--match-vibe);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.booster-power {
+  color: var(--sunset-orange);
+  font-weight: 600;
+}
+
+.booster-best-use {
+  color: var(--leaf-green);
+  font-weight: 500;
+}
+
+.booster-strategy {
+  color: var(--savanna-light);
+  font-style: italic;
+}
+
+.booster-effect:last-child,
+.booster-power:last-child,
+.booster-best-use:last-child,
+.booster-strategy:last-child {
+  margin-bottom: 0;
+}
+
+/* Legacy Progress Container - No longer used */
 
 /* Contact Form */
 .contact-grid {
@@ -784,7 +1066,7 @@ body {
 }
 
 /* Footer */
-.savanna-footer {
+.footer-savanna {
   background: linear-gradient(
     135deg,
     var(--wild-brown) 0%,
@@ -795,15 +1077,21 @@ body {
   margin-top: 4rem;
 }
 
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .footer-content {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   margin-bottom: 2rem;
+  justify-content: space-between;
 }
 
 .footer-section {
-  flex: 1;
   min-width: 250px;
 }
 
@@ -811,12 +1099,6 @@ body {
   color: var(--savanna-gold);
   margin-bottom: 1rem;
   font-size: 1.5rem;
-}
-
-.footer-subtitle {
-  color: var(--savanna-gold);
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
 }
 
 .footer-links {
@@ -832,47 +1114,45 @@ body {
 }
 
 .footer-link:hover {
-  color: var(--savanna-gold);
+  color: var(--safari-gold);
 }
 
-.social-links {
+.footer-contact-info {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.social-link {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  background: var(--savanna-gold);
-  border-radius: 50%;
+.footer-contact-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+  gap: 0.5rem;
 }
 
-.social-link:hover {
-  transform: scale(1.1);
+.footer-contact-icon {
+  font-size: 1.1rem;
+  min-width: 20px;
 }
 
-.social-icon {
-  font-size: 1.2rem;
+.footer-contact-text {
+  color: var(--white);
+  font-size: 0.95rem;
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--savanna-gold);
+  border-top: 1px solid var(--safari-gold);
   padding-top: 2rem;
   text-align: center;
 }
 
-.footer-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-copyright-text {
+  font-size: 15px;
+  color: var(--white);
+  margin: 0;
 }
 
 /* Links */
@@ -932,17 +1212,21 @@ body {
 
   .footer-content {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
+    justify-content: flex-start;
   }
 
-  .footer-info {
-    flex-direction: column;
-    text-align: center;
+  .footer-copyright-text {
+    font-size: 13px;
   }
 }
 
 @media (max-width: 360px) {
   .savanna-container {
+    padding: 0 10px;
+  }
+
+  .footer-container {
     padding: 0 10px;
   }
 
@@ -973,6 +1257,23 @@ body {
   .policy-text-container {
     padding: 2rem 1rem;
   }
+
+  .footer-copyright-text {
+    font-size: 13px;
+  }
+}
+
+/* Error Message */
+.error-message {
+  text-align: center;
+  color: var(--earth-red);
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  border: 2px solid var(--earth-red);
 }
 
 /* Utility Classes */
@@ -1004,4 +1305,796 @@ body {
 }
 .mt-4 {
   margin-top: 2rem;
+}
+
+/* How to Safari Match Section */
+.how-to-safari-card {
+  margin: 4rem 0;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px var(--shadow-dark);
+  max-width: 100%;
+}
+
+.how-to-safari-bg {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+    url("../assets/safari-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.how-to-safari-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 69, 19, 0.8) 0%,
+    rgba(47, 79, 47, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+.how-to-safari-bg .section-title {
+  color: var(--white);
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.how-to-safari-bg .section-title::after {
+  background: linear-gradient(
+    90deg,
+    var(--safari-accent),
+    var(--safari-highlight)
+  );
+}
+
+.how-to-safari-bg .instructions-grid {
+  position: relative;
+  z-index: 2;
+}
+
+/* Instructions Grid */
+.instructions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.instruction-step {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  border: 2px solid var(--safari-accent);
+  transition: all 0.3s ease;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.instruction-step:hover {
+  transform: translateY(-8px);
+  border-color: var(--safari-highlight);
+  box-shadow: 0 15px 40px var(--shadow-dark);
+  background: rgba(255, 255, 255, 1);
+}
+
+.step-number {
+  background: linear-gradient(
+    135deg,
+    var(--safari-accent),
+    var(--safari-highlight)
+  );
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem auto;
+  box-shadow: 0 4px 15px var(--shadow-medium);
+}
+
+.instruction-step h3 {
+  color: var(--wild-brown);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.instruction-step p {
+  color: var(--jungle-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Grid */
+@media (max-width: 1024px) {
+  .instructions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .instruction-step {
+    padding: 1.25rem;
+  }
+
+  .instruction-step h3 {
+    font-size: 1.2rem;
+  }
+
+  .instruction-step p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .how-to-safari-card {
+    margin: 3rem 1rem;
+    border-radius: 20px;
+  }
+
+  .how-to-safari-bg {
+    padding: 3rem 0;
+    background-attachment: scroll;
+  }
+
+  .instructions-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .instruction-step {
+    padding: 1rem;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .instruction-step h3 {
+    font-size: 1.1rem;
+  }
+
+  .instruction-step p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .instructions-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  .instruction-step {
+    padding: 1.25rem;
+  }
+
+  .step-number {
+    width: 45px;
+    height: 45px;
+    font-size: 1.1rem;
+  }
+
+  .instruction-step h3 {
+    font-size: 1.2rem;
+  }
+
+  .instruction-step p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Safari Adventurers Section */
+.safari-adventurers {
+  padding: 4rem 0;
+  background: linear-gradient(
+    135deg,
+    var(--savanna-light) 0%,
+    var(--white) 100%
+  );
+}
+
+/* Adventurer Text Content */
+.adventurer-text-content {
+  max-width: 1000px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.adventurer-text-paragraph {
+  color: var(--jungle-dark);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.adventurer-text-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+/* Adventurer Testimonials Grid */
+.adventurer-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adventurer-testimonial-card {
+  background: var(--white);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px var(--shadow-light);
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.adventurer-testimonial-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--safari-accent);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.adventurer-testimonial-card::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--safari-accent);
+  position: absolute;
+  top: -5px;
+  left: 15px;
+  font-family: serif;
+}
+
+.adventurer-testimonial-text {
+  color: var(--jungle-dark);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.adventurer-name {
+  color: var(--wild-brown);
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+/* Responsive Design for Adventurers Section */
+@media (max-width: 1024px) {
+  .adventurer-testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .adventurer-text-paragraph {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .adventurer-testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 500px;
+  }
+
+  .adventurer-testimonial-card {
+    padding: 1.25rem;
+  }
+
+  .adventurer-text-paragraph {
+    font-size: 0.95rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .adventurer-testimonial-text {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .adventurer-testimonial-card {
+    padding: 1rem;
+  }
+
+  .adventurer-testimonial-card::before {
+    font-size: 2.5rem;
+    top: -3px;
+    left: 10px;
+  }
+
+  .adventurer-text-paragraph {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Responsive Design for Animals & Boosters Section */
+@media (max-width: 1024px) {
+  .animals-boosters-container {
+    gap: 1rem;
+  }
+
+  .animal-card,
+  .booster-card {
+    min-width: 240px;
+    max-width: 300px;
+    padding: 1rem;
+  }
+
+  .animal-name,
+  .booster-name {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .animal-description,
+  .booster-description {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .animal-details,
+  .booster-details {
+    padding: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .animals-boosters-container {
+    gap: 0.875rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .animal-card,
+  .booster-card {
+    min-width: 100%;
+    max-width: 400px;
+    padding: 1rem;
+  }
+
+  .animal-name,
+  .booster-name {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .animal-description,
+  .booster-description {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .animal-details,
+  .booster-details {
+    padding: 0.75rem;
+  }
+
+  .animal-power,
+  .animal-ability,
+  .animal-habitat,
+  .animal-strategy,
+  .booster-effect,
+  .booster-power,
+  .booster-best-use,
+  .booster-strategy {
+    font-size: 0.7rem;
+    margin-bottom: 0.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .animal-card,
+  .booster-card {
+    padding: 0.875rem;
+    border-radius: 10px;
+  }
+
+  .animal-name,
+  .booster-name {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .animal-description,
+  .booster-description {
+    font-size: 0.7rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .animal-details,
+  .booster-details {
+    padding: 0.625rem;
+    border-radius: 8px;
+  }
+
+  .animal-power,
+  .animal-ability,
+  .animal-habitat,
+  .animal-strategy,
+  .booster-effect,
+  .booster-power,
+  .booster-best-use,
+  .booster-strategy {
+    font-size: 0.65rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+/* Safari Journey Progress Card */
+.safari-journey-card {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+    url("../assets/safari-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 12px 30px var(--shadow-dark);
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+}
+
+.safari-journey-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 69, 19, 0.8) 0%,
+    rgba(47, 79, 47, 0.8) 100%
+  );
+  z-index: 1;
+}
+
+.safari-journey-container {
+  position: relative;
+  z-index: 2;
+}
+
+.safari-journey-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.journey-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--safari-accent);
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+.journey-subtitle {
+  font-size: 1rem;
+  color: var(--savanna-light);
+  font-weight: 500;
+}
+
+.journey-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.journey-stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.journey-stat-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-4px);
+  border-color: var(--safari-accent);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px var(--shadow-medium));
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--safari-accent);
+  margin-bottom: 0.375rem;
+  text-shadow: 1px 1px 2px var(--shadow-dark);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.375rem;
+}
+
+.stat-description {
+  font-size: 0.8rem;
+  color: var(--savanna-light);
+  line-height: 1.3;
+}
+
+.journey-achievements {
+  margin-bottom: 2rem;
+}
+
+.achievements-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--safari-accent);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.achievement-item {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  transition: all 0.3s ease;
+}
+
+.achievement-item.unlocked {
+  border-color: var(--safari-accent);
+  background: rgba(255, 215, 0, 0.1);
+}
+
+.achievement-item.locked {
+  border-color: rgba(255, 255, 255, 0.3);
+  opacity: 0.8;
+}
+
+.achievement-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.achievement-status {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 2px 4px var(--shadow-medium));
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.375rem;
+}
+
+.achievement-description {
+  font-size: 0.8rem;
+  color: var(--savanna-light);
+  margin-bottom: 0.375rem;
+  line-height: 1.3;
+}
+
+.achievement-progress {
+  font-size: 0.75rem;
+  color: var(--safari-accent);
+  font-weight: 600;
+}
+
+.next-milestone {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 2px solid var(--safari-accent);
+  text-align: center;
+}
+
+.milestone-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--safari-accent);
+  margin-bottom: 0.75rem;
+  text-shadow: 1px 1px 2px var(--shadow-dark);
+}
+
+.milestone-description {
+  font-size: 0.9rem;
+  color: var(--savanna-light);
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.milestone-progress {
+  margin-bottom: 0.75rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--safari-accent),
+    var(--safari-highlight)
+  );
+  border-radius: 5px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  font-size: 0.8rem;
+  color: var(--safari-accent);
+  font-weight: 600;
+}
+
+/* Responsive Design for Safari Journey Progress */
+@media (max-width: 1024px) {
+  .safari-journey-card {
+    padding: 1.75rem;
+  }
+
+  .journey-title {
+    font-size: 1.8rem;
+  }
+
+  .journey-stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.875rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .safari-journey-card {
+    padding: 1.5rem;
+    background-attachment: scroll;
+  }
+
+  .journey-title {
+    font-size: 1.6rem;
+  }
+
+  .journey-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .journey-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .journey-stat-card {
+    padding: 1rem;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 0.875rem;
+  }
+
+  .achievement-item {
+    padding: 0.875rem;
+  }
+
+  .next-milestone {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .safari-journey-card {
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
+  .journey-title {
+    font-size: 1.4rem;
+  }
+
+  .journey-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .journey-stats-grid {
+    gap: 0.75rem;
+  }
+
+  .journey-stat-card {
+    padding: 0.875rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-icon {
+    font-size: 1.5rem;
+  }
+
+  .stat-value {
+    font-size: 1.25rem;
+  }
+
+  .achievements-title {
+    font-size: 1.3rem;
+  }
+
+  .achievement-item {
+    padding: 0.75rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .achievement-status {
+    font-size: 1.25rem;
+  }
+
+  .next-milestone {
+    padding: 1rem;
+  }
+
+  .milestone-title {
+    font-size: 1.1rem;
+  }
 }
