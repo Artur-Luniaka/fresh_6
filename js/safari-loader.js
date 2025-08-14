@@ -64,9 +64,9 @@ async function loadTemplates() {
       }
     }, 100);
 
-    console.log("🌿 Templates loaded successfully");
+    // Templates loaded successfully
   } catch (error) {
-    console.error("❌ Error loading templates:", error);
+    // Error loading templates
   }
 }
 
@@ -81,9 +81,9 @@ async function loadContentFromJSON(jsonFile, targetElementId) {
       renderContent(data, targetElement);
     }
 
-    console.log(`📄 Content loaded from ${jsonFile}`);
+    // Content loaded from JSON file
   } catch (error) {
-    console.error(`❌ Error loading content from ${jsonFile}:`, error);
+    // Error loading content from JSON file
     // Show error message
     showErrorContent(targetElementId);
   }
@@ -106,8 +106,8 @@ function renderContent(data, targetElement) {
     renderAnimals(data.animals, targetElement);
   } else if (data.levels) {
     renderLevels(data.levels, targetElement);
-  } else if (data.enhancements) {
-    renderEnhancements(data.enhancements, targetElement);
+  } else if (data.adventures) {
+    renderAdventures(data.adventures, targetElement);
   } else if (data.diaries) {
     renderDiaries(data.diaries, targetElement);
   } else if (data.contact) {
@@ -263,8 +263,7 @@ function renderAnimals(animals, targetElement) {
         .join("");
     })
     .catch((error) => {
-      console.error("❌ Error loading boosters:", error);
-      // Just render animals if boosters fail
+      // Error loading boosters - just render animals if boosters fail
       targetElement.innerHTML = animalsData
         .map(
           (animal) => `
@@ -381,15 +380,23 @@ function renderLevels(levels, targetElement) {
     `;
 }
 
-function renderEnhancements(enhancements, targetElement) {
-  targetElement.innerHTML = enhancements
+function renderAdventures(adventures, targetElement) {
+  targetElement.innerHTML = adventures
     .map(
-      (enhancement) => `
-        <div class="enhancement-card">
-            <div class="enhancement-icon">${enhancement.icon}</div>
-            <h3 class="enhancement-title">${enhancement.title}</h3>
-            <p class="enhancement-description">${enhancement.description}</p>
-            <div class="enhancement-version">Version: ${enhancement.version}</div>
+      (adventure) => `
+        <div class="adventure-card">
+            <h3 class="adventure-title">${adventure.title}</h3>
+            <p class="adventure-description">${adventure.description}</p>
+            <div class="adventure-details">
+                <div class="adventure-difficulty ${adventure.difficulty.toLowerCase()}">${
+        adventure.difficulty
+      }</div>
+                <div class="adventure-rewards">${adventure.rewards}</div>
+                <div class="adventure-unlock">${
+                  adventure.unlock_condition
+                }</div>
+            </div>
+            <div class="adventure-version">Version: ${adventure.version}</div>
         </div>
     `
     )
@@ -402,8 +409,10 @@ function renderDiaries(diaries, targetElement) {
       (diary) => `
         <div class="diary-card">
             <div class="diary-icon">${diary.icon}</div>
+            <div class="diary-category">${diary.category}</div>
             <h3 class="diary-title">${diary.title}</h3>
             <p class="diary-story">${diary.story}</p>
+            <div class="diary-date">${diary.date}</div>
             <div class="diary-player">Player: ${diary.player}</div>
         </div>
     `
@@ -516,7 +525,7 @@ async function loadPageContent() {
           renderSafariJourney(data["safari-journey"], safariJourneyElement);
         }
       } catch (error) {
-        console.error("❌ Error loading home content:", error);
+        // Error loading home content
         showErrorContent("features-content");
         showErrorContent("instructions-content");
         showErrorContent("adventurer-text-content");
@@ -526,8 +535,22 @@ async function loadPageContent() {
       }
       break;
     case "updates":
-      await loadContentFromJSON("updates-content.json", "enhancements-content");
-      await loadContentFromJSON("updates-content.json", "diaries-content");
+      // Load adventures content
+      await loadContentFromJSON("updates-content.json", "adventures-content");
+
+      // Load diaries content separately to avoid duplication
+      try {
+        const response = await fetch("data/updates-content.json");
+        const data = await response.json();
+
+        const diariesElement = document.getElementById("diaries-content");
+        if (diariesElement && data.diaries) {
+          renderDiaries(data.diaries, diariesElement);
+        }
+      } catch (error) {
+        // Error loading diaries content
+        showErrorContent("diaries-content");
+      }
       break;
     case "contact":
       await loadContentFromJSON(
@@ -550,7 +573,6 @@ function getCurrentPage() {
 
 // Initialize content loading when DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🌿 Safari Match Content Loader initialized");
   loadPageContent();
 });
 

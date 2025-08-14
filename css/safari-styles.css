@@ -19,6 +19,112 @@
   --safari-accent: #ffd700;
   --safari-highlight: #ffa500;
   --safari-glow: rgba(255, 215, 0, 0.3);
+
+  /* Additional color variables for transparency */
+  --transparent-black-10: rgba(0, 0, 0, 0.1);
+  --transparent-black-20: rgba(0, 0, 0, 0.2);
+  --transparent-black-30: rgba(0, 0, 0, 0.3);
+  --transparent-black-40: rgba(0, 0, 0, 0.4);
+  --transparent-black-50: rgba(0, 0, 0, 0.5);
+  --transparent-black-60: rgba(0, 0, 0, 0.6);
+  --transparent-black-70: rgba(0, 0, 0, 0.7);
+
+  --transparent-white-05: rgba(255, 255, 255, 0.05);
+  --transparent-white-10: rgba(255, 255, 255, 0.1);
+  --transparent-white-15: rgba(255, 255, 255, 0.15);
+  --transparent-white-20: rgba(255, 255, 255, 0.2);
+  --transparent-white-25: rgba(255, 255, 255, 0.25);
+  --transparent-white-90: rgba(255, 255, 255, 0.9);
+  --transparent-white-95: rgba(255, 255, 255, 0.95);
+}
+
+/* Cookie Consent Banner Styles */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, var(--jungle-dark), var(--wild-brown));
+  color: var(--white);
+  z-index: 10000;
+  box-shadow: 0 -4px 20px var(--shadow-dark);
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    visibility 0.3s ease-in-out;
+}
+
+.cookie-consent-banner.show {
+  transform: translateY(0);
+}
+
+.cookie-consent-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cookie-consent-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.cookie-consent-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--savanna-light);
+}
+
+.cookie-accept-button {
+  background: linear-gradient(
+    135deg,
+    var(--savanna-gold),
+    var(--sunset-orange)
+  );
+  color: var(--white);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 2px 10px var(--shadow-medium);
+}
+
+.cookie-accept-button:hover {
+  background: linear-gradient(
+    135deg,
+    var(--sunset-orange),
+    var(--safari-highlight)
+  );
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px var(--shadow-dark);
+}
+
+.cookie-accept-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsive for cookie banner */
+@media (max-width: 768px) {
+  .cookie-consent-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .cookie-consent-text p {
+    font-size: 0.9rem;
+  }
+
+  .cookie-accept-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
 }
 
 /* Reset and Base Styles */
@@ -26,6 +132,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -212,7 +323,7 @@ body {
   left: 0;
   width: 100%;
   height: calc(100vh - 90px);
-  background: rgba(0, 0, 0, 0.7);
+  background: var(--transparent-black-70);
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
@@ -315,7 +426,7 @@ body {
 
 .mobile-nav-close:hover {
   color: var(--savanna-gold);
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--transparent-white-10);
   transform: scale(1.1);
 }
 
@@ -330,12 +441,12 @@ body {
 
 .mobile-nav-item {
   margin: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--transparent-white-10);
   transition: all 0.3s ease;
 }
 
 .mobile-nav-item:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--transparent-white-05);
 }
 
 .mobile-nav-item:last-child {
@@ -457,7 +568,7 @@ body {
 .safari-adventurers,
 .animal-boosters,
 .level-progression,
-.game-enhancements,
+.safari-adventures,
 .safari-diaries,
 .contact-info,
 .disclaimer-content,
@@ -590,11 +701,11 @@ body {
   border-color: var(--match-vibe);
 }
 
-.feature-card.safari-enhancements {
+.feature-card.safari-adventures {
   border-color: var(--safari-accent);
 }
 
-.feature-card.safari-enhancements:hover {
+.feature-card.safari-adventures:hover {
   border-color: var(--safari-highlight);
 }
 
@@ -606,19 +717,19 @@ body {
   border-color: var(--safari-accent);
 }
 
-/* Enhancement Cards - Unique styling for game updates */
-.enhancement-card {
+/* Safari Adventure Cards - Unique styling for safari updates */
+.adventure-card {
   background: linear-gradient(
     135deg,
     var(--leaf-green) 0%,
     var(--jungle-dark) 100%
   );
-  padding: 2rem;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px var(--shadow-medium);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px var(--shadow-medium);
   flex: 1;
-  min-width: 300px;
-  max-width: 400px;
+  min-width: 280px;
+  max-width: 350px;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid var(--safari-accent);
@@ -626,45 +737,98 @@ body {
   overflow: hidden;
 }
 
-.enhancement-card:hover {
+.adventure-card:hover {
   transform: translateY(-8px);
   border-color: var(--safari-highlight);
   box-shadow: 0 12px 35px var(--shadow-dark);
 }
 
-.enhancement-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 2px 4px var(--shadow-medium));
-  position: relative;
-  z-index: 2;
-}
-
-.enhancement-title {
+.adventure-title {
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-shadow: 2px 2px 4px var(--shadow-dark);
   position: relative;
   z-index: 2;
 }
 
-.enhancement-description {
+.adventure-description {
   color: var(--savanna-light);
-  font-size: 1rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.5;
   position: relative;
   z-index: 2;
   margin-bottom: 1rem;
 }
 
-.enhancement-version {
+.adventure-details {
+  background: var(--transparent-white-10);
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--transparent-white-20);
+}
+
+.adventure-difficulty {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  display: inline-block;
+}
+
+.adventure-difficulty.easy {
+  background: var(--leaf-green);
+  color: var(--white);
+}
+
+.adventure-difficulty.medium {
+  background: var(--safari-accent);
+  color: var(--black);
+}
+
+.adventure-difficulty.hard {
+  background: var(--sunset-orange);
+  color: var(--white);
+}
+
+.adventure-difficulty.expert {
+  background: var(--match-vibe);
+  color: var(--white);
+}
+
+.adventure-rewards {
+  color: var(--safari-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.adventure-unlock {
+  color: var(--sky-blue);
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.adventure-version {
   color: var(--safari-accent);
   font-size: 0.9rem;
   font-weight: 600;
   position: relative;
   z-index: 2;
+}
+
+/* Safari Adventures Grid */
+.adventures-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 /* Diary Cards - Unique styling for player stories */
@@ -726,6 +890,168 @@ body {
   font-weight: 600;
   position: relative;
   z-index: 2;
+}
+
+/* Safari Diaries Container */
+.diaries-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+/* Safari Diaries Section - Background and Grid Layout */
+.safari-diaries {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.diaries-background {
+  background: linear-gradient(
+      var(--transparent-black-60),
+      var(--transparent-black-60)
+    ),
+    url("../assets/safari-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  border-radius: 20px;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.diaries-background .savanna-container {
+  padding: 2rem 2rem;
+}
+
+.diaries-background .section-title,
+.diaries-background .section-description {
+  color: var(--white);
+  text-shadow: 2px 2px 4px var(--shadow-dark);
+}
+
+.diaries-background .section-title::after {
+  background: linear-gradient(90deg, var(--savanna-gold), var(--sunset-orange));
+}
+
+.diaries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Enhanced Diary Cards for Grid Layout */
+.diaries-grid .diary-card {
+  background: linear-gradient(
+    135deg,
+    var(--transparent-white-95) 0%,
+    var(--transparent-white-90) 100%
+  );
+  border: 2px solid var(--safari-accent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+}
+
+.diaries-grid .diary-card .diary-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.diaries-grid .diary-card .diary-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.diaries-grid .diary-card .diary-story {
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.4;
+}
+
+.diaries-grid .diary-card .diary-category,
+.diaries-grid .diary-card .diary-date {
+  font-size: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.diaries-grid .diary-card .diary-player {
+  font-size: 0.8rem;
+}
+
+.diaries-grid .diary-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--safari-highlight);
+  box-shadow: 0 12px 35px var(--shadow-dark);
+  background: linear-gradient(
+    135deg,
+    var(--white) 0%,
+    var(--transparent-white-95) 100%
+  );
+}
+
+.diaries-grid .diary-card .diary-title {
+  color: var(--wild-brown);
+  text-shadow: none;
+}
+
+.diaries-grid .diary-card .diary-story {
+  color: var(--jungle-dark);
+}
+
+.diaries-grid .diary-card .diary-player {
+  color: var(--leaf-green);
+  font-weight: 700;
+}
+
+.diaries-grid .diary-card .diary-category {
+  color: var(--sunset-orange);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.diaries-grid .diary-card .diary-date {
+  color: var(--jungle-dark);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Grid Layout */
+@media (max-width: 1024px) {
+  .diaries-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .diaries-grid .diary-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .diaries-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .diaries-background {
+    margin: 0 10px;
+  }
+
+  .diaries-background .savanna-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .diaries-grid .diary-card {
+    padding: 1.25rem;
+  }
 }
 
 /* Instructions Container - Legacy support */
@@ -790,11 +1116,11 @@ body {
 }
 
 .animal-details {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--transparent-white-10);
   border-radius: 8px;
   padding: 0.875rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--transparent-white-20);
 }
 
 .animal-power,
@@ -885,11 +1211,11 @@ body {
 }
 
 .booster-details {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--transparent-white-10);
   border-radius: 8px;
   padding: 0.875rem;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--transparent-white-20);
 }
 
 .booster-effect,
@@ -939,6 +1265,7 @@ body {
   display: flex;
   gap: 3rem;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
 }
 
 .contact-details,
@@ -1207,7 +1534,7 @@ body {
   }
 
   .contact-grid {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 
   .footer-content {
@@ -1317,7 +1644,10 @@ body {
 }
 
 .how-to-safari-bg {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+  background: linear-gradient(
+      var(--transparent-black-60),
+      var(--transparent-black-40)
+    ),
     url("../assets/safari-hero.jpg");
   background-size: cover;
   background-position: center;
@@ -1372,7 +1702,7 @@ body {
 }
 
 .instruction-step {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--transparent-white-95);
   padding: 1.5rem;
   border-radius: 20px;
   box-shadow: 0 8px 25px var(--shadow-medium);
@@ -1386,7 +1716,7 @@ body {
   transform: translateY(-8px);
   border-color: var(--safari-highlight);
   box-shadow: 0 15px 40px var(--shadow-dark);
-  background: rgba(255, 255, 255, 1);
+  background: var(--white);
 }
 
 .step-number {
@@ -1648,6 +1978,16 @@ body {
     padding: 1rem;
   }
 
+  .adventure-card {
+    min-width: 280px;
+    max-width: 350px;
+    padding: 1.5rem;
+  }
+
+  .adventure-details {
+    padding: 0.875rem;
+  }
+
   .animal-name,
   .booster-name {
     font-size: 1.3rem;
@@ -1663,6 +2003,24 @@ body {
   .animal-details,
   .booster-details {
     padding: 0.75rem;
+  }
+
+  .adventure-card {
+    min-width: 100%;
+    max-width: 400px;
+    padding: 1.25rem;
+  }
+
+  .adventure-details {
+    padding: 0.75rem;
+  }
+
+  .adventure-title {
+    font-size: 1.3rem;
+  }
+
+  .adventure-description {
+    font-size: 0.9rem;
   }
 }
 
@@ -1750,7 +2108,10 @@ body {
 
 /* Safari Journey Progress Card */
 .safari-journey-card {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(
+      var(--transparent-black-70),
+      var(--transparent-black-50)
+    ),
     url("../assets/safari-hero.jpg");
   background-size: cover;
   background-position: center;
@@ -1810,11 +2171,11 @@ body {
 }
 
 .journey-stat-card {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--transparent-white-15);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 1.25rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--transparent-white-20);
   display: flex;
   align-items: center;
   gap: 0.875rem;
@@ -1822,7 +2183,7 @@ body {
 }
 
 .journey-stat-card:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--transparent-white-25);
   transform: translateY(-4px);
   border-color: var(--safari-accent);
 }
@@ -1877,11 +2238,11 @@ body {
 }
 
 .achievement-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--transparent-white-10);
   backdrop-filter: blur(10px);
   border-radius: 10px;
   padding: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--transparent-white-20);
   display: flex;
   align-items: center;
   gap: 0.875rem;
@@ -1890,17 +2251,17 @@ body {
 
 .achievement-item.unlocked {
   border-color: var(--safari-accent);
-  background: rgba(255, 215, 0, 0.1);
+  background: var(--safari-glow);
 }
 
 .achievement-item.locked {
-  border-color: rgba(255, 255, 255, 0.3);
+  border-color: var(--transparent-white-30);
   opacity: 0.8;
 }
 
 .achievement-item:hover {
   transform: translateY(-2px);
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--transparent-white-20);
 }
 
 .achievement-status {
@@ -1933,7 +2294,7 @@ body {
 }
 
 .next-milestone {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--transparent-white-10);
   backdrop-filter: blur(10px);
   border-radius: 12px;
   padding: 1.5rem;
@@ -1963,7 +2324,7 @@ body {
 .progress-bar {
   width: 100%;
   height: 10px;
-  background: rgba(255, 255, 255, 0.2);
+  background: var(--transparent-white-20);
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 0.75rem;
@@ -2096,5 +2457,171 @@ body {
 
   .milestone-title {
     font-size: 1.1rem;
+  }
+}
+
+/* Submission Overlay and Modal Styles */
+.submission-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--transparent-black-70);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.submission-modal {
+  background: linear-gradient(135deg, var(--white), var(--savanna-light));
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 20px 40px var(--shadow-dark);
+  text-align: center;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  animation: slideIn 0.4s ease-out;
+}
+
+.submission-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.spinner-ring {
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--savanna-light);
+  border-top: 4px solid var(--leaf-green);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.spinner-text {
+  font-size: 1.2rem;
+  color: var(--wild-brown);
+  font-weight: 500;
+}
+
+.success-modal .success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.success-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.success-content h3 {
+  font-size: 1.8rem;
+  color: var(--leaf-green);
+  margin: 0;
+}
+
+.success-content p {
+  font-size: 1.1rem;
+  color: var(--wild-brown);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 768px) {
+  .submission-modal {
+    padding: 2rem;
+    margin: 20px;
+  }
+
+  .success-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .success-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .submission-modal {
+    padding: 1.5rem;
+    margin: 15px;
+  }
+
+  .spinner-ring {
+    width: 50px;
+    height: 50px;
+  }
+
+  .spinner-text {
+    font-size: 1.1rem;
+  }
+
+  .success-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .success-content p {
+    font-size: 0.95rem;
   }
 }

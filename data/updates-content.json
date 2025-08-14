@@ -1,40 +1,68 @@
 {
-  "enhancements": [
+  "adventures": [
     {
-      "icon": "🆕",
-      "title": "New Animal Types",
-      "description": "Added exciting new safari animals with unique abilities and special powers. Discover the mysterious cheetah and powerful rhino in this major update!",
-      "version": "2.1.0"
+      "title": "Lion's Pride Territory",
+      "description": "Explore the majestic Lion's Pride Territory with new puzzle challenges and hidden treasures. The king of the jungle awaits your strategic skills!",
+      "version": "2.1.0",
+      "difficulty": "Hard",
+      "rewards": "Lion-themed boosters, Royal badges",
+      "unlock_condition": "Complete 50 levels"
     },
     {
-      "icon": "⚡",
-      "title": "Enhanced Boosters",
-      "description": "Improved booster mechanics and added new special combinations for more strategic gameplay. The new 'Safari Storm' booster is a game-changer!",
-      "version": "2.1.0"
+      "title": "Giraffe's Canopy Quest",
+      "description": "Reach new heights in the Giraffe's Canopy Quest! Solve puzzles among the treetops and discover rare power-ups hidden in the branches.",
+      "version": "2.1.0",
+      "difficulty": "Medium",
+      "rewards": "Canopy boosters, Height achievement",
+      "unlock_condition": "Complete 30 levels"
     },
     {
-      "icon": "🎨",
-      "title": "Visual Improvements",
-      "description": "Enhanced graphics with new particle effects, smoother animations, and improved lighting. The safari world has never looked more beautiful!",
-      "version": "2.0.5"
+      "title": "Elephant's Memory Challenge",
+      "description": "Test your memory in the Elephant's Memory Challenge! Remember patterns and sequences to unlock special safari rewards and achievements.",
+      "version": "2.0.5",
+      "difficulty": "Medium",
+      "rewards": "Memory boosters, Pattern recognition",
+      "unlock_condition": "Complete 25 levels"
     },
     {
-      "icon": "🔊",
-      "title": "Audio Enhancement",
-      "description": "New ambient sounds, improved animal noises, and dynamic music that changes based on your progress. Immerse yourself in the safari experience!",
-      "version": "2.0.5"
+      "title": "Zebra's Striped Mystery",
+      "description": "Unravel the Zebra's Striped Mystery with unique pattern-matching puzzles. Each stripe holds a secret waiting to be discovered!",
+      "version": "2.0.5",
+      "difficulty": "Easy",
+      "rewards": "Pattern boosters, Mystery solver badge",
+      "unlock_condition": "Complete 20 levels"
     },
     {
-      "icon": "🏆",
-      "title": "Achievement System",
-      "description": "Brand new achievement system with over 50 unique challenges. Track your progress and unlock special rewards as you master the safari!",
-      "version": "2.0.0"
+      "title": "Hippo's Water Adventure",
+      "description": "Dive into the Hippo's Water Adventure! Navigate through flowing puzzles and unlock aquatic-themed boosters and special effects.",
+      "version": "2.0.0",
+      "difficulty": "Hard",
+      "rewards": "Water boosters, Aquatic explorer",
+      "unlock_condition": "Complete 40 levels"
     },
     {
-      "icon": "🌍",
-      "title": "Multi-language Support",
-      "description": "Added support for 12 new languages including Spanish, French, German, and Japanese. Play Safari Match in your native language!",
-      "version": "2.0.0"
+      "title": "Kangaroo's Bounce Challenge",
+      "description": "Jump into action with the Kangaroo's Bounce Challenge! Master the art of strategic bouncing and unlock exclusive safari rewards.",
+      "version": "2.0.0",
+      "difficulty": "Medium",
+      "rewards": "Bounce boosters, Momentum master",
+      "unlock_condition": "Complete 35 levels"
+    },
+    {
+      "title": "Cheetah's Speed Challenge",
+      "description": "Race against time in the Cheetah's Speed Challenge! Test your reflexes and quick thinking in fast-paced puzzle scenarios.",
+      "version": "2.0.0",
+      "difficulty": "Hard",
+      "rewards": "Speed boosters, Time master badge",
+      "unlock_condition": "Complete 45 levels"
+    },
+    {
+      "title": "Rhino's Power Quest",
+      "description": "Unleash raw power in the Rhino's Power Quest! Break through tough obstacles and discover hidden strength abilities.",
+      "version": "2.0.0",
+      "difficulty": "Expert",
+      "rewards": "Power boosters, Unstoppable badge",
+      "unlock_condition": "Complete 55 levels"
     }
   ],
   "diaries": [
@@ -42,37 +70,49 @@
       "icon": "🏆",
       "title": "New World Record!",
       "story": "Player 'WildPuzzleMaster' achieved an incredible score of 15,420 points on Level 47! This amazing feat was accomplished using a perfect combination of boosters and strategic thinking.",
-      "player": "WildPuzzleMaster"
+      "player": "WildPuzzleMaster",
+      "date": "July 15, 2025",
+      "category": "Achievement"
     },
     {
       "icon": "🎯",
-      "title": "Perfect Combo",
-      "story": "Amazing 8-block combination created by 'SafariQueen' resulting in a massive score boost! The combo cleared the entire board and unlocked a secret achievement.",
-      "player": "SafariQueen"
+      "title": "Perfect Combo Master",
+      "story": "Amazing 8-block combination created by 'SafariQueen' resulting in a massive score boost! The combo cleared the entire board and unlocked a secret achievement that only 0.1% of players have discovered.",
+      "player": "SafariQueen",
+      "date": "July 14, 2025",
+      "category": "Strategy"
     },
     {
       "icon": "🌟",
-      "title": "First Time Victory",
-      "story": "New player 'JungleExplorer' completed their first 10 levels in record time! Their natural puzzle-solving skills impressed even the most experienced players.",
-      "player": "JungleExplorer"
+      "title": "Safari Legend Emerges",
+      "story": "New player 'JungleExplorer' completed their first 100 levels in record time! Their natural puzzle-solving skills and innovative strategies have inspired the entire community to think outside the box.",
+      "player": "JungleExplorer",
+      "date": "July 13, 2025",
+      "category": "Community"
     },
     {
       "icon": "🔥",
-      "title": "Booster Master",
-      "story": "Player 'LightningStrike' used all 5 boosters in a single level to achieve the impossible! This creative strategy opened up new possibilities for future players.",
-      "player": "LightningStrike"
+      "title": "Speed Demon Challenge",
+      "story": "Player 'LightningStrike' completed the entire Cheetah's Speed Challenge in under 2 hours! This lightning-fast completion set a new community benchmark and earned them the prestigious 'Speed Demon' title.",
+      "player": "LightningStrike",
+      "date": "July 12, 2025",
+      "category": "Speed"
     },
     {
-      "icon": "💎",
-      "title": "Diamond Achievement",
-      "story": "Player 'SafariLegend' unlocked the rare 'Diamond Safari' achievement by completing 100 levels with perfect scores. A true master of the game!",
-      "player": "SafariLegend"
+      "icon": "🧩",
+      "title": "Puzzle Innovation Award",
+      "story": "Creative player 'MindBender' discovered a completely new strategy for solving Level 89 that the developers never anticipated! Their innovative approach has been shared with the community and is now considered the optimal solution.",
+      "player": "MindBender",
+      "date": "July 11, 2025",
+      "category": "Innovation"
     },
     {
-      "icon": "🚀",
-      "title": "Speed Runner",
-      "story": "Player 'FastFinger' completed the entire tutorial in under 2 minutes! Their lightning-fast reflexes and strategic thinking set a new speed record.",
-      "player": "FastFinger"
+      "icon": "🎨",
+      "title": "Safari Artist Extraordinaire",
+      "story": "Player 'CreativeSoul' spent 3 months creating the most beautiful and organized safari layout ever seen! Their artistic arrangement of boosters and strategic placement has inspired a new trend in the community.",
+      "player": "CreativeSoul",
+      "date": "July 10, 2025",
+      "category": "Creativity"
     }
   ]
 }

@@ -1,15 +1,15 @@
 {
   "contact": {
-    "email": "info@safarimatch.com",
-    "phone": "+27 21 123 4567",
-    "address": "Safari Street 123, Cape Town, South Africa",
+    "email": "info@NovaGameVault.com",
+    "phone": "+61 2 6010 3794",
+    "address": "7 Jacaranda Avenue, Coffs Harbour NSW 2450, Australia",
     "social": {
       "facebook": "https://facebook.com/safarimatch",
       "twitter": "https://twitter.com/safarimatch",
       "instagram": "https://instagram.com/safarimatch",
       "youtube": "https://youtube.com/safarimatch"
     },
-    "hours": "Monday - Friday: 9:00 AM - 6:00 PM (SAST)",
-    "support": "support@safarimatch.com"
+    "hours": "Monday - Friday: 9:00 AM - 6:00 PM (AEST)",
+    "support": "support@NovaGameVault.com"
   }
 }

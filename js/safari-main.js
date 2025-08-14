@@ -9,7 +9,6 @@ let isGameActive = false;
 
 // Safari-themed game functions
 function startSafariAdventure() {
-  console.log("🦁 Starting Safari Match Adventure!");
   isGameActive = true;
 
   // Show game start animation
@@ -39,7 +38,6 @@ function startSafariAdventure() {
 }
 
 function initializeSafariGrid() {
-  console.log("🌿 Initializing Safari Grid...");
   gridAnimals = [
     { type: "lion", emoji: "🦁", power: 3, color: "sunset-orange" },
     { type: "elephant", emoji: "🐘", power: 5, color: "wild-brown" },
@@ -47,14 +45,11 @@ function initializeSafariGrid() {
     { type: "zebra", emoji: "🦓", power: 1, color: "black" },
     { type: "hippo", emoji: "🦛", power: 4, color: "jungle-dark" },
   ];
-
-  console.log("🐾 Safari animals loaded:", gridAnimals.length);
 }
 
 function matchAnimalBlocks() {
   if (!isGameActive) return;
 
-  console.log("🔗 Matching animal blocks...");
   playerScore += 10;
   boosterCount++;
 
@@ -71,7 +66,6 @@ function matchAnimalBlocks() {
 }
 
 function unleashBoosterWild() {
-  console.log("⚡ Unleashing Wild Booster!");
   boosterCount = 0;
 
   // Show booster message
@@ -79,8 +73,6 @@ function unleashBoosterWild() {
 }
 
 function updatePuzzleProgress() {
-  console.log("📊 Updating puzzle progress...");
-
   // Update level progress
   if (playerScore >= currentLevel * 100) {
     currentLevel++;
@@ -100,7 +92,6 @@ function updatePuzzleProgress() {
 
 function showMatchAnimation() {
   // Simple score update without animation
-  console.log("+10 points scored!");
 }
 
 function showLevelUpMessage() {
@@ -203,6 +194,11 @@ function openMobileMenu() {
     document.body.style.position = "fixed";
     document.body.style.width = "100%";
     document.body.style.top = `-${window.scrollY}px`;
+
+    // Hide cookie banner when mobile menu is open
+    if (window.hideCookieBannerForMenu) {
+      window.hideCookieBannerForMenu();
+    }
   }
 }
 
@@ -230,6 +226,11 @@ function closeMobileMenu() {
     if (scrollY) {
       window.scrollTo(0, parseInt(scrollY || "0") * -1);
     }
+
+    // Show cookie banner when mobile menu is closed
+    if (window.showCookieBannerForMenu) {
+      window.showCookieBannerForMenu();
+    }
   }
 }
 
@@ -246,20 +247,99 @@ function handleContactSubmit(event) {
 
   const formData = new FormData(event.target);
   const name = formData.get("name");
-  const email = formData.get("email");
   const phone = formData.get("phone");
   const message = formData.get("message");
 
-  // Show success message
-  showSafariMessage(
-    `Thank you, ${name}! Your message has been sent to the safari team! 🦁📧`
-  );
+  // Простая валидация на заполненность полей
+  if (!name || !name.trim()) {
+    showSafariMessage("Пожалуйста, введите ваше имя");
+    document.getElementById("visitor-name").focus();
+    return;
+  }
+
+  if (!phone || !phone.trim()) {
+    showSafariMessage("Пожалуйста, введите номер телефона");
+    document.getElementById("visitor-phone").focus();
+    return;
+  }
+
+  if (!message || !message.trim()) {
+    showSafariMessage("Пожалуйста, введите сообщение");
+    document.getElementById("visitor-message").focus();
+    return;
+  }
+
+  // Показываем оверлей и модалку
+  showSubmissionOverlay();
+
+  // Прокручиваем страницу вверх
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
+  // Имитируем процесс отправки (в реальном приложении здесь был бы API запрос)
+  setTimeout(() => {
+    showSuccessMessage(name);
+  }, 3000);
 
   // Reset form
   event.target.reset();
 
-  // Log form submission (in real app, this would send to server)
-  console.log("📧 Contact form submitted:", { name, email, phone, message });
+  // Form submission logged (in real app, this would send to server)
+}
+
+// Функция показа оверлея с модалкой
+function showSubmissionOverlay() {
+  // Создаем оверлей
+  const overlay = document.createElement("div");
+  overlay.id = "submission-overlay";
+  overlay.className = "submission-overlay";
+
+  // Создаем модалку
+  const modal = document.createElement("div");
+  modal.className = "submission-modal";
+
+  // Создаем спиннер
+  const spinner = document.createElement("div");
+  spinner.className = "submission-spinner";
+  spinner.innerHTML = `
+    <div class="spinner-ring"></div>
+    <div class="spinner-text">Processing your message...</div>
+  `;
+
+  modal.appendChild(spinner);
+  overlay.appendChild(modal);
+  document.body.appendChild(overlay);
+
+  // Блокируем прокрутку страницы
+  document.body.style.overflow = "hidden";
+}
+
+// Функция скрытия оверлея
+function hideSubmissionOverlay() {
+  const overlay = document.getElementById("submission-overlay");
+  if (overlay) {
+    overlay.remove();
+    document.body.style.overflow = "";
+  }
+}
+
+// Функция показа уведомления об успехе в той же модалке
+function showSuccessMessage(name) {
+  const modal = document.querySelector(".submission-modal");
+  if (modal) {
+    // Заменяем содержимое модалки на уведомление
+    modal.innerHTML = `
+      <div class="success-content">
+        <h3>Message Sent Successfully!</h3>
+        <p>Thank you, ${name}! Your message has been received by our safari team.</p>
+        <p>We'll get back to you as soon as possible.</p>
+      </div>
+    `;
+
+    // Автоматически закрываем модалку через 3 секунды
+    setTimeout(() => {
+      hideSubmissionOverlay();
+    }, 3000);
+  }
 }
 
 // Smooth scrolling for navigation
@@ -282,6 +362,62 @@ function initializeSmoothScrolling() {
   });
 }
 
+// Cookie consent functionality
+function initializeCookieConsent() {
+  const cookieBanner = document.getElementById("cookie-consent-banner");
+  const acceptButton = document.getElementById("cookie-accept-btn");
+
+  if (!cookieBanner || !acceptButton) return;
+
+  // Check if user has already accepted cookies
+  const cookiesAccepted = localStorage.getItem("safari-cookies-accepted");
+
+  if (cookiesAccepted === "true") {
+    // Hide banner if cookies already accepted
+    cookieBanner.style.display = "none";
+    return;
+  }
+
+  // Show banner after a short delay
+  setTimeout(() => {
+    cookieBanner.classList.add("show");
+  }, 1000);
+
+  // Handle accept button click
+  acceptButton.addEventListener("click", () => {
+    // Save to localStorage
+    localStorage.setItem("safari-cookies-accepted", "true");
+
+    // Hide banner with animation
+    cookieBanner.classList.remove("show");
+
+    // Remove banner from DOM after animation
+    setTimeout(() => {
+      cookieBanner.style.display = "none";
+    }, 300);
+  });
+
+  // Function to hide cookie banner when mobile menu is open
+  function hideCookieBannerForMenu() {
+    if (cookieBanner && !cookiesAccepted) {
+      cookieBanner.style.visibility = "hidden";
+      cookieBanner.style.opacity = "0";
+    }
+  }
+
+  // Function to show cookie banner when mobile menu is closed
+  function showCookieBannerForMenu() {
+    if (cookieBanner && !cookiesAccepted) {
+      cookieBanner.style.visibility = "visible";
+      cookieBanner.style.opacity = "1";
+    }
+  }
+
+  // Export functions for mobile menu to use
+  window.hideCookieBannerForMenu = hideCookieBannerForMenu;
+  window.showCookieBannerForMenu = showCookieBannerForMenu;
+}
+
 // Safari-themed utility functions
 function getRandomSafariAnimal() {
   const animals = ["🦁", "🐘", "🦒", "🦓", "🦛", "🦏", "🐆", "🦊"];
@@ -290,14 +426,11 @@ function getRandomSafariAnimal() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("🌿 Safari Match DOM loaded!");
-
   // Initialize all functionality
   initializeMobileMenu();
   initializeContactForm();
   initializeSmoothScrolling();
-
-  console.log("🦁 Safari Match fully initialized!");
+  initializeCookieConsent();
 });
 
 // Export functions for external use
@@ -308,4 +441,8 @@ window.SafariMatch = {
   updatePuzzleProgress,
   showSafariMessage,
   getRandomSafariAnimal,
+  showSubmissionOverlay,
+  hideSubmissionOverlay,
+  showSuccessMessage,
+  initializeCookieConsent,
 };
